@@ -20,7 +20,6 @@ public class TC002_RegisterLoginUserTest {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         driver.get("https://demo.guru99.com/test/newtours/index.php");
-
     }
 
     @Test
@@ -51,8 +50,6 @@ public class TC002_RegisterLoginUserTest {
         LoginSuccessPage loginSuccessPage=new LoginSuccessPage(driver);
         String successMessage= loginSuccessPage.checkLoginSuccess();
         Assert.assertTrue(successMessage.contains("Login Successfully"),"Login attempt failed");
-
-
 
     }
 
