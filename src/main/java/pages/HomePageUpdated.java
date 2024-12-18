@@ -10,9 +10,10 @@ public class HomePageUpdated {
     public HomePageUpdated(WebDriver driver){
         this.driver=driver;
     }
-//comment
-    //coment
-    //coment
+    //comment
+    //comment
+    //comment
+    //comment
     By registerBtn_Loc =By.linkText("REGISTER");
 
     public void selectRegisterMenu(){
