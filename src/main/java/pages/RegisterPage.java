@@ -17,7 +17,7 @@ public class RegisterPage {
     By lastName_loc= By.xpath("//input[@name='lastName']");
     By email_loc= By.xpath("//input[@id='userName']");
     By country_loc= By.xpath("//select[@name='country']");
-    By userNameName_loc= By.xpath("//input[@id='email']");
+    By userName_loc= By.xpath("//input[@id='email']");
     By password_loc= By.xpath("//input[@name='password']");
     By confirmPassword_loc= By.xpath("//input[@name='confirmPassword']");
     By submitBtn_loc= By.xpath("//input[@name='submit']");
@@ -37,7 +37,7 @@ public class RegisterPage {
         dropDownCountry.selectByIndex(2);
     }
     public void setUserName(String userName){
-        driver.findElement(userNameName_loc).sendKeys(userName);
+        driver.findElement(userName_loc).sendKeys(userName);
     }
     public void setPassword(String password){
         driver.findElement(password_loc).sendKeys(password);
