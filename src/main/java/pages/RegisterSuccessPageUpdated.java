@@ -2,6 +2,9 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class RegisterSuccessPageUpdated {
 
@@ -9,11 +12,14 @@ public class RegisterSuccessPageUpdated {
 
     public RegisterSuccessPageUpdated(WebDriver driver){
         this.driver=driver;
+        PageFactory.initElements(driver,this);
     }
-    By checkSuccess_Loc= By.xpath("//b[contains(text(),'Dear')]");
+
+    @FindBy(xpath = "//b[contains(text(),'Dear')]")
+    public WebElement checkSuccess_ele;
 
     public String registerSuccessText(){
-        String successText=driver.findElement(checkSuccess_Loc).getText();
+        String successText=checkSuccess_ele.getText();
         return successText;
     }
 }

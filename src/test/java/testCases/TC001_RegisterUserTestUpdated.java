@@ -6,9 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import pages.HomePage;
-import pages.RegisterPage;
-import pages.RegisterSuccessPage;
+import pages.*;
 
 import java.time.Duration;
 
@@ -27,10 +25,10 @@ public class TC001_RegisterUserTestUpdated {
 
     @Test
     public void TC001(){
-        HomePage homePage=new HomePage(driver);
+        HomePageUpdated homePage= new HomePageUpdated(driver);
         homePage.selectRegisterMenu();
 
-        RegisterPage registerPage=new RegisterPage(driver);
+        RegisterPageUpdated registerPage= new RegisterPageUpdated(driver);
         registerPage.setFirstName("chamod");
         registerPage.setLastName("ganegoda");
         registerPage.setEmail("123@gmail.com");
@@ -41,7 +39,7 @@ public class TC001_RegisterUserTestUpdated {
 
         registerPage.clickSubmitBtn();
 
-        RegisterSuccessPage registerSuccessPage=new RegisterSuccessPage(driver);
+        RegisterSuccessPageUpdated registerSuccessPage= new RegisterSuccessPageUpdated(driver);
         String actualText=registerSuccessPage.registerSuccessText();
         Assert.assertTrue(actualText.contains("Dear"),"Registration attempt failed");
     }
