@@ -24,10 +24,10 @@ public class TC002_RegisterLoginUserTestUpdated {
 
     @Test
     public void TC002(){
-        HomePage homePage=new HomePage(driver);
+        HomePageUpdated homePage= new HomePageUpdated(driver);
         homePage.selectRegisterMenu();
 
-        RegisterPage registerPage=new RegisterPage(driver);
+        RegisterPageUpdated registerPage= new RegisterPageUpdated(driver);
         registerPage.setFirstName("chamod");
         registerPage.setLastName("ganegoda");
         registerPage.setEmail("123@gmail.com");
@@ -35,19 +35,20 @@ public class TC002_RegisterLoginUserTestUpdated {
         registerPage.setUserName("chamod");
         registerPage.setPassword("12345678");
         registerPage.setConfirmPassword("12345678");
+
         registerPage.clickSubmitBtn();
 
-        RegisterSuccessPage registerSuccessPage=new RegisterSuccessPage(driver);
+        RegisterSuccessPageUpdated registerSuccessPage= new RegisterSuccessPageUpdated(driver);
         String actualText=registerSuccessPage.registerSuccessText();
         Assert.assertTrue(actualText.contains("Dear"),"Registration attempt failed");
 
-        LoginPage loginPage=new LoginPage(driver);
+        LoginPageUpdated loginPage= new LoginPageUpdated(driver);
         loginPage.clickSignIn();
         loginPage.setUserName("chamod");
         loginPage.setPassword("12345678");
         loginPage.clickSubmitBtn();
 
-        LoginSuccessPage loginSuccessPage=new LoginSuccessPage(driver);
+        LoginSuccessPageUpdated loginSuccessPage= new LoginSuccessPageUpdated(driver);
         String successMessage= loginSuccessPage.checkLoginSuccess();
         Assert.assertTrue(successMessage.contains("Login Successfully"),"Login attempt failed");
 

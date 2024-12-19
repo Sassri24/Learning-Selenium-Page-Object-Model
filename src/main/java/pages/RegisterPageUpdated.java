@@ -18,18 +18,25 @@ public class RegisterPageUpdated {
 
     @FindBy(xpath = "//input[@name='firstName']")
     public WebElement firstName_ele;
+
     @FindBy(xpath = "//input[@name='lastName']")
     public WebElement lastName_ele;
+
     @FindBy(xpath = "//input[@id='userName']")
     public WebElement email_ele;
+
     @FindBy(xpath = "//select[@name='country']")
     public WebElement country_ele;
+
     @FindBy(xpath = "//input[@id='email']")
     public WebElement userName_ele;
+
     @FindBy(xpath = "//input[@name='password']")
     public WebElement password_ele;
+
     @FindBy(xpath = "//input[@name='confirmPassword']")
     public WebElement confirmPassword_ele;
+
     @FindBy(xpath = "//input[@name='submit']")
     public WebElement submitBtn_ele;
 
